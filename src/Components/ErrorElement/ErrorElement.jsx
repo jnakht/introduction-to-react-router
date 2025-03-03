@@ -8,12 +8,17 @@ const ErrorElement = () => {
     const handleHome = () => {
         navigate('/');
     }
+    console.log(error.statusText || error.message);
     return (
         <div>
             <h1>Oops!!!</h1>
-            <p>Not Found</p>
-            <p>Go back where you from</p>
-            <button onClick={handleHome}>Home</button>
+            {
+                error.status === 404 && <div>
+                    <p>Not Found</p>
+                    <p>Go back where you from</p>
+                    <button onClick={handleHome}>Home</button>
+                </div>
+            }
         </div>
     );
 };
