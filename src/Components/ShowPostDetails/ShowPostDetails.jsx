@@ -1,4 +1,4 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 
 
 const ShowPostDetails = () => {
@@ -8,6 +8,13 @@ const ShowPostDetails = () => {
         border: '2px solid aquamarine',
         padding: '20px',
     }
+    // gets the obj
+    const params = useParams();
+    console.log(params) 
+    // gets the id
+    const {postID} = useParams();
+    console.log(postID)
+    
     const navigate = useNavigate();
     const handleBack = () => {
         navigate(-1);
